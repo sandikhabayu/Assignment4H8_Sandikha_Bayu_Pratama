@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Utama</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { margin: 20px; }
+        .form-section { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Halaman Utama</h1>
+        <div id="info">
+            <p><strong>Nama:</strong> <span id="display-nama"></span></p>
+            <p><strong>Email:</strong> <span id="display-email"></span></p>
+            <p><strong>Role:</strong> <span id="display-role"></span></p>
+            <p><strong>Pengalaman Role:</strong> <span id="display-pengalaman"></span></p>
+            <p><strong>Usia:</strong> <span id="display-usia"></span></p>
+            <p><strong>Lokasi:</strong> <span id="display-lokasi"></span></p>
+        </div>
+        <button onclick="edit()">Edit</button>
+    </div>
+
+    <div class="container form-section" id="form-section">
+        <h1>Form Pengisian</h1>
+        <form id="userForm">
+            <label for="nama">Nama:</label><br>
+            <input type="text" id="nama" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br>
+            <label for="role">Role:</label><br>
+            <select id="role" required>
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Manager">Manager</option>
+            </select><br>
+            <label for="pengalaman">Pengalaman Role:</label><br>
+            <textarea id="pengalaman" required></textarea><br>
+            <label for="usia">Usia:</label><br>
+            <input type="number" id="usia" required><br>
+            <label for="lokasi">Lokasi:</label><br>
+            <input type="text" id="lokasi" required><br><br>
+            <button type="button" onclick="submitForm()">Simpan</button>
+        </form>
+    </div>
+
+    <script>
+        function edit() {
+            document.getElementById('info').style.display = 'none';
+            document.getElementById('form-section').style.display = 'block';
+        }
+
+        function submitForm() {
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const role = document.getElementById('role').value;
+            const pengalaman = document.getElementById('pengalaman').value;
+            const usia = document.getElementById('usia').value;
+            const lokasi = document.getElementById('lokasi').value;
+
+            document.getElementById('display-nama').innerText = nama;
+            document.getElementById('display-email').innerText = email;
+            document.getElementById('display-role').innerText = role;
+            document.getElementById('display-pengalaman').innerText = pengalaman;
+            document.getElementById('display-usia').innerText = usia;
+            document.getElementById('display-lokasi').innerText = lokasi;
+
+            document.getElementById('info').style.display = 'block';
+            document.getElementById('form-section').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

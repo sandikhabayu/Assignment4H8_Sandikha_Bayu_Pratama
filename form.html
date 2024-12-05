@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Form Data Peserta</title>
+</head>
+<body>
+    <div class="bg-white flex items-center justify-center flex-col h-screen pt-10">
+        <h1>Section Form</h1>
+        <div class="w-1/2 p-5">
+            <form id="dataForm" class="p-5 shadow-inner">
+                <label>Nama</label><br>
+                <input type="text" id="nama" class="w-full border-solid border-2" required><br><br>
+            
+                <label>Role</label><br>
+                <input type="text" id="role" class="w-full border-solid border-2" required><br><br>
+
+                <label>Availability</label><br>
+                <input type="text" id="availability" class="w-full border-solid border-2" required><br><br>
+
+                <label>Usia</label><br>
+                <input type="number" id="usia" min="0" class="w-full border-solid border-2" required><br><br>
+
+                <label>Lokasi</label><br>
+                <input type="text" id="lokasi" class="w-full border-solid border-2" required><br><br>
+
+                <label>Year Experience</label><br>
+                <input type="number" id="pengalaman" min="0" class="w-full border-solid border-2" required><br><br>
+                
+                <label>Email</label><br>
+                <input type="email" id="email" class="w-full border-solid border-2" required><br><br>
+                
+                <button class="bg-green-700 rounded-md w-full text-white" type="button" onclick="saveData()">Simpan</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
